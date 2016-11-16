@@ -26509,8 +26509,11 @@
 			}
 		},
 		updateUser: function (data) {
+			console.log('--------');
+			console.log(data);
+			console.log('--------');
 			this.setState({
-				user: data
+				user: data.user
 			});
 		}
 	});
@@ -44973,6 +44976,7 @@
 		displayName: 'exports',
 
 		render: function () {
+			// console.log('list-item', this.props)
 			var imgSrc = '';
 			if (this.props.productType == 'coffee_machines') imgSrc = '/img/' + this.props.productType + '/' + this.props.type + '.png';else if (this.props.productType == 'coffee_pods') {
 				imgSrc = '/img/' + this.props.productType + '/' + this.props.info.coffee_flavor + '.png';

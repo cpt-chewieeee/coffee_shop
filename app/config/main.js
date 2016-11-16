@@ -60,8 +60,11 @@ module.exports = React.createClass({
 		}
 	},
 	updateUser: function(data){
+		console.log('--------');
+		console.log(data);
+		console.log('--------');
 		this.setState({
-			user: data
+			user: data.user
 		})
 	}
 })

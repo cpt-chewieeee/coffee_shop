@@ -2,6 +2,7 @@ var React = require('react');
 var Thumbnail = require('react-bootstrap/lib/Thumbnail');
 module.exports = React.createClass({
 	render: function(){
+		// console.log('list-item', this.props)
 		var imgSrc = '';
 		if(this.props.productType == 'coffee_machines')
 			imgSrc = '/img/' + this.props.productType + '/' + this.props.type + '.png';
