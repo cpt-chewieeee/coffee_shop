@@ -26556,11 +26556,6 @@
 							'0'
 						)
 					)
-				),
-				React.createElement(
-					NavItem,
-					{ eventKey: 2 },
-					'Settings'
 				)
 			);
 			return React.createElement(

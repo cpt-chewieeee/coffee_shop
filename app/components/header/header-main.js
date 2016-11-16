@@ -14,7 +14,6 @@ module.exports = React.createClass({
 						</Nav>)
 		var profileComp = (<Nav pullRight>
 							<NavItem eventKey={1}><i className="fa fa-shopping-cart"><span className="badge header-badge">0</span></i></NavItem>
-							<NavItem eventKey={2}>Settings</NavItem>
 						</Nav>)
 		return (
 			<div>
