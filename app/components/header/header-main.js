@@ -13,7 +13,7 @@ module.exports = React.createClass({
 							<NavItem eventKey={1} onClick={this.toggleModal}>Sign In</NavItem>
 						</Nav>)
 		var profileComp = (<Nav pullRight>
-							<NavItem eventKey={1} onClick={this.navToProfile}>Profile</NavItem>
+							<NavItem eventKey={1}><i className="fa fa-shopping-cart"><span className="badge header-badge">0</span></i></NavItem>
 							<NavItem eventKey={2}>Settings</NavItem>
 						</Nav>)
 		return (

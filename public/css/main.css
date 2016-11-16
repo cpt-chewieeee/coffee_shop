@@ -14,3 +14,5 @@
 .list-item-card p, .list-item-card h4 {
 	margin: 10px 10px;
 }
+.fa-shopping-cart {position: relative; width: 30px;}
+.header-badge {position: absolute; bottom: 10px;}

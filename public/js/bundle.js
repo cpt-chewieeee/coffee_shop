@@ -26546,8 +26546,16 @@
 				{ pullRight: true },
 				React.createElement(
 					NavItem,
-					{ eventKey: 1, onClick: this.navToProfile },
-					'Profile'
+					{ eventKey: 1 },
+					React.createElement(
+						'i',
+						{ className: 'fa fa-shopping-cart' },
+						React.createElement(
+							'span',
+							{ className: 'badge header-badge' },
+							'0'
+						)
+					)
 				),
 				React.createElement(
 					NavItem,
