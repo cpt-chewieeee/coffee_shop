@@ -1,0 +1,16 @@
+.sign-in-btns button{margin: 0 20px;}
+
+.list-item-card {
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	margin: 10px 10px;
+	width: 228px;
+	display: inline-block;
+}
+.list-item-card img {
+	width: 70px;
+	height: 100px;
+}
+.list-item-card p, .list-item-card h4 {
+	margin: 10px 10px;
+}
