@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node_modules/nodemon/bin/nodemon.js start",
-    "run:forever": "NODE_ENV=product forever start ./start",
+    "run:forever": "NODE_ENV=production forever start ./start",
     "forever:stop": "forever stop ./start"
   },
   "author": "hongyi zhang",
