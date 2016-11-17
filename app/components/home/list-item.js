@@ -14,9 +14,10 @@ module.exports = React.createClass({
 					<p className="text-center"><img src={imgSrc} /></p>
 					<h4>{this.props.info.name}</h4>
 					<p className="text-right">{this.props.info.price}</p>
+					<p className="text-right">{(this.props.info.type.water_line_compatible? <strong>Water Line</strong> :  <strong className="strike-through">Water Line</strong>)}</p>
 					<p className="text-right">#{this.props.info.id}</p>
 				</div>
-				<p className="text-right">	
+				<p className="text-right machine-action-btns">	
 					{(this.props.user? <button className="btn btn-default" onClick={this.addToCart}><i className="fa fa-plus"></i></button> : '')}
 					<button className="btn btn-primary" onClick={this.navToItem}>View Product</button>
 					

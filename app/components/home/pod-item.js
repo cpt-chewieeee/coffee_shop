@@ -20,7 +20,7 @@ module.exports = React.createClass({
 							}
 						</select>
 					</p>
-					<p className="text-right"><button className="btn btn-primary btn-xs"><i className="fa fa-plus"></i></button></p>
+					<p className="text-right">{(this.props.user ? <button className="btn btn-primary btn-xs"><i className="fa fa-plus"></i></button> : '')}</p>
 				</div>
 
 			</div>

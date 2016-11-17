@@ -44535,7 +44535,7 @@
 				{ className: 'container-fluid' },
 				React.createElement(ProductList, { products: this.state.machines, selectCoffee: this.selectCoffee, user: this.props.user, selectedId: this.state.selectedId }),
 				React.createElement('br', null),
-				React.createElement(RecommendedPods, { pods: this.state.pods, selectedType: this.state.selectedType })
+				React.createElement(RecommendedPods, { pods: this.state.pods, selectedType: this.state.selectedType, user: this.props.user })
 			);
 		},
 		getInitialState: function () {
@@ -45032,13 +45032,26 @@
 					React.createElement(
 						'p',
 						{ className: 'text-right' },
+						this.props.info.type.water_line_compatible ? React.createElement(
+							'strong',
+							null,
+							'Water Line'
+						) : React.createElement(
+							'strong',
+							{ className: 'strike-through' },
+							'Water Line'
+						)
+					),
+					React.createElement(
+						'p',
+						{ className: 'text-right' },
 						'#',
 						this.props.info.id
 					)
 				),
 				React.createElement(
 					'p',
-					{ className: 'text-right' },
+					{ className: 'text-right machine-action-btns' },
 					this.props.user ? React.createElement(
 						'button',
 						{ className: 'btn btn-default', onClick: this.addToCart },
@@ -45172,10 +45185,12 @@
 		displayName: 'exports',
 
 		render: function () {
+			console.log(this.props);
 			return React.createElement(
 				'div',
 				null,
-				'hello world'
+				'your viewing product #',
+				this.props.params.itemId
 			);
 		}
 	});
@@ -45208,8 +45223,7 @@
 			if (this.state.selectedType === null) return null;
 			var all_pods = [];
 			for (var key in this.state.selectedPods.flavors) {
-				// console.log(key, this.state.selectedPods.flavors[key]);
-				all_pods.push(React.createElement(Pod, { flavor: key, key: key, packs: this.state.selectedPods.flavors[key] }));
+				all_pods.push(React.createElement(Pod, { flavor: key, key: key, packs: this.state.selectedPods.flavors[key], user: this.props.user }));
 			}
 			return React.createElement(
 				Panel,
@@ -45309,11 +45323,11 @@
 					React.createElement(
 						'p',
 						{ className: 'text-right' },
-						React.createElement(
+						this.props.user ? React.createElement(
 							'button',
 							{ className: 'btn btn-primary btn-xs' },
 							React.createElement('i', { className: 'fa fa-plus' })
-						)
+						) : ''
 					)
 				)
 			);

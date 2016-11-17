@@ -15,7 +15,7 @@ module.exports = React.createClass({
 			<div className="container-fluid">
 				<ProductList products={this.state.machines} selectCoffee={this.selectCoffee} user={this.props.user} selectedId={this.state.selectedId}/>
 				<br />
-				<RecommendedPods pods={this.state.pods} selectedType={this.state.selectedType} />
+				<RecommendedPods pods={this.state.pods} selectedType={this.state.selectedType} user={this.props.user}/>
 			</div>
 		)
 	},

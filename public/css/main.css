@@ -20,4 +20,6 @@
 .fa-shopping-cart {position: relative; width: 30px;}
 .header-badge {position: absolute; bottom: 10px;}
 .filter-machine, .filter-size { width: 250px; background-color: red; margin: 0 10px;}
-.panel-body {overflow: auto; height: 310px;}
+.panel-body {overflow: auto; height: 330px;}
+.machine-action-btns .btn {margin-left: 5px;}
+.strike-through {text-decoration: line-through;}

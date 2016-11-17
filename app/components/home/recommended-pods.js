@@ -6,8 +6,7 @@ module.exports = React.createClass({
 		if(this.state.selectedType === null) return null;
 		var all_pods = [];
 		for(var key in this.state.selectedPods.flavors){
-			// console.log(key, this.state.selectedPods.flavors[key]);
-			all_pods.push(<Pod flavor={key} key={key} packs={this.state.selectedPods.flavors[key]} />);
+			all_pods.push(<Pod flavor={key} key={key} packs={this.state.selectedPods.flavors[key]} user={this.props.user}/>);
 		}
 		return (
 			<Panel header={'Recommended Pods'}>
