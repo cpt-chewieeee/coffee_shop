@@ -9,7 +9,7 @@ module.exports = React.createClass({
 				
 				<div>
 					<p className="text-center"><img src={imgSrc} /></p>
-
+					<p className="text-center"><strong>{EditFormat.flavor(this.props.flavor)}</strong></p>
 					<p className="text-right">{(this.state.selectedPrice ? this.state.selectedPrice : '')}</p>
 					<p>
 						<select className="form-control" value={this.state.selectedPodId} onChange={this.handlePodChange}>
