@@ -1,7 +1,7 @@
 module.exports = {
 	port: 8181,
 	secret: 'hello_world',
-	public: '../../../public/',
+	public: '/../../public/',
 	public_files: function(){
 		var fs = require('fs');
 		var recursion  = function(dir, file_, full){
