@@ -7,21 +7,20 @@ var ListItem = require('./list-item');
 module.exports = React.createClass({
 	render: function(){
 		var all_products = [];
-		var name = (this.props.productType == 'coffee_machines')? 'Coffee Machines' : 'Coffee Pods';
 		for(var key in this.props.products){
-			
 			for(var j = 0; j < this.props.products[key].length; j++){
 				all_products.push(<ListItem 
 					key={key + '-' + j} 
-					productType={this.props.productType} 
 					type={key} 
 					info={this.props.products[key][j]}
 					user={this.props.user}
+					selectCoffee={this.props.selectCoffee}
+					selectedId={this.props.selectedId}
 				/>)
 			}
 		}
 		return (
-			<Panel header={name}>
+			<Panel header={'Coffee Machines'}>
 				<div>
 					{all_products}
 				</div>

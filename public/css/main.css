@@ -7,6 +7,9 @@
 	width: 228px;
 	display: inline-block;
 }
+.list-item-card.selected {
+	border: 2px solid black !important;
+}
 .list-item-card img {
 	width: 70px;
 	height: 100px;
@@ -16,3 +19,5 @@
 }
 .fa-shopping-cart {position: relative; width: 30px;}
 .header-badge {position: absolute; bottom: 10px;}
+.filter-machine, .filter-size { width: 250px; background-color: red; margin: 0 10px;}
+.panel-body {overflow: auto; height: 310px;}

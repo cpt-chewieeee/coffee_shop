@@ -32,7 +32,6 @@ module.exports = React.createClass({
 		}
 	},
 	componentWillReceiveProps: function(nextProps, nextState) {
-		// console.log('--->', nextProps.params.itemId);
 		if(Object.keys(nextProps.params).length > 0)
 			this.filterItem(nextProps.params.itemId);
 	},
@@ -60,9 +59,6 @@ module.exports = React.createClass({
 		}
 	},
 	updateUser: function(data){
-		console.log('--------');
-		console.log(data);
-		console.log('--------');
 		this.setState({
 			user: data.user
 		})
