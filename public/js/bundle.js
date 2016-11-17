@@ -45421,7 +45421,6 @@
 		displayName: "exports",
 
 		render: function () {
-			console.log(this.props.cart);
 			return React.createElement(
 				"div",
 				null,
