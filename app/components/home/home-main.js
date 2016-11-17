@@ -13,9 +13,9 @@ module.exports = React.createClass({
 		// console.log(this.props.products);
 		return (
 			<div className="container-fluid">
-				<ProductList products={this.state.machines} selectCoffee={this.selectCoffee} user={this.props.user} selectedId={this.state.selectedId}/>
+				<ProductList products={this.state.machines} selectCoffee={this.selectCoffee} user={this.props.user} selectedId={this.state.selectedId} addMachine={this.addProduct}/>
 				<br />
-				<RecommendedPods pods={this.state.pods} selectedType={this.state.selectedType} user={this.props.user}/>
+				<RecommendedPods pods={this.state.pods} selectedType={this.state.selectedType} user={this.props.user} addPod={this.addProduct}/>
 			</div>
 		)
 	},
@@ -49,5 +49,8 @@ module.exports = React.createClass({
 				pods: nextProps.products.coffee_pods
 			})
 		}
+	},
+	addProduct: function(id, price){
+		this.props.addProduct(id, price);
 	}
-})
+});

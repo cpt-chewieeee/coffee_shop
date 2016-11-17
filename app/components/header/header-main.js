@@ -13,7 +13,7 @@ module.exports = React.createClass({
 							<NavItem eventKey={1} onClick={this.toggleModal}>Sign In</NavItem>
 						</Nav>)
 		var profileComp = (<Nav pullRight>
-							<NavItem eventKey={1}><i className="fa fa-shopping-cart"><span className="badge header-badge">0</span></i></NavItem>
+							<NavItem eventKey={1} onClick={this.navToCart}><i className="fa fa-shopping-cart"><span className="badge header-badge">{this.props.cartCount}</span></i></NavItem>
 						</Nav>)
 		return (
 			<div>
@@ -43,5 +43,8 @@ module.exports = React.createClass({
 	},
 	login: function(username, password){
 		this.props.login(username, password, this.toggleModal);
+	},
+	navToCart: function(){
+		location.href = '#/cart';
 	}
 })

@@ -20,7 +20,7 @@ module.exports = React.createClass({
 							}
 						</select>
 					</p>
-					<p className="text-right">{(this.props.user ? <button className="btn btn-primary btn-xs"><i className="fa fa-plus"></i></button> : '')}</p>
+					<p className="text-right">{(this.props.user ? <button className="btn btn-primary btn-xs" onClick={this.addPod}><i className="fa fa-plus"></i></button> : '')}</p>
 				</div>
 
 			</div>
@@ -50,15 +50,22 @@ module.exports = React.createClass({
 		// console.log('pi', this.props.packs[0].price);
 		if(this.props.packs.length > 0){
 			this.setState({
-				selectedPrice: this.props.packs[0].price
+				selectedPrice: this.props.packs[0].price,
+				selectedPodId: this.props.packs[0].id
 			})
 		}
 	},
 	componentWillReceiveProps: function(nextProps) {
 		if(this.props.packs != nextProps.packs && nextProps.packs.length > 0){
 			this.setState({
-				selectedPrice: nextProps.packs[0].price
+				selectedPrice: nextProps.packs[0].price,
+				selectedPodId: nextProps.packs[0].id
 			})
+		}
+	},
+	addPod: function(id){
+		if(this.props.addPod){
+			this.props.addPod(this.state.selectedPodId, this.state.selectedPrice);
 		}
 	}
 })

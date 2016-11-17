@@ -7,11 +7,11 @@ module.exports = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<Header user={this.state.user} login={this.login}/>
+				<Header user={this.state.user} login={this.login} cartCount={this.state.cartCount}/>
 				<div className="container-fluid">
 					{
 						React.Children.map(this.props.children, function(child){
-							return React.cloneElement(child, {user: this.state.user, products: this.state.products});
+							return React.cloneElement(child, {user: this.state.user, products: this.state.products, addProduct: this.addProduct, cart: this.state.cart});
 						}, this)
 					}
 				</div>
@@ -21,11 +21,12 @@ module.exports = React.createClass({
 	getInitialState: function() {
 		return {
 			user: null,
-			products: null,
+			products: {},
+			cart: [],
+			cartCount: 0
 		}
 	},
 	componentDidMount: function(){
-		
 		Api.getAll(this.getAllCallBack);
 		if(Object.keys(this.props.params).length > 0){
 			this.filterItem(this.props.params.itemId);
@@ -34,9 +35,6 @@ module.exports = React.createClass({
 	componentWillReceiveProps: function(nextProps, nextState) {
 		if(Object.keys(nextProps.params).length > 0)
 			this.filterItem(nextProps.params.itemId);
-	},
-	filterItem: function(id){
-		console.log('filterItem', id);
 	},
 	getAllCallBack: function(data, error){
 		if(error){
@@ -62,5 +60,13 @@ module.exports = React.createClass({
 		this.setState({
 			user: data.user
 		})
+	},
+	addProduct: function(id, price){
+		var cart = this.state.cart;
+		cart.push({id: id, price: price});
+		this.setState({
+			cartCount: this.state.cartCount + 1,
+			cart: cart
+		});
 	}
 })

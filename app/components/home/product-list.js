@@ -16,6 +16,7 @@ module.exports = React.createClass({
 					user={this.props.user}
 					selectCoffee={this.props.selectCoffee}
 					selectedId={this.props.selectedId}
+					addMachine={this.props.addMachine}
 				/>)
 			}
 		}

@@ -2,7 +2,6 @@ var React = require('react');
 var Thumbnail = require('react-bootstrap/lib/Thumbnail');
 module.exports = React.createClass({
 	render: function(){
-		// console.log('list-item', this.props);
 		var imgSrc = '/img/coffee_machines/' + this.props.type + '.png';
 		var selected = ''
 		if(this.props.selectedId !== null && this.props.selectedId === this.props.info.id){
@@ -18,7 +17,7 @@ module.exports = React.createClass({
 					<p className="text-right">#{this.props.info.id}</p>
 				</div>
 				<p className="text-right machine-action-btns">	
-					{(this.props.user? <button className="btn btn-default" onClick={this.addToCart}><i className="fa fa-plus"></i></button> : '')}
+					{(this.props.user? <button className="btn btn-default" onClick={this.addToCart.bind(this, this.props.info.id, this.props.info.price)}><i className="fa fa-plus"></i></button> : '')}
 					<button className="btn btn-primary" onClick={this.navToItem}>View Product</button>
 					
 				</p>
@@ -35,7 +34,9 @@ module.exports = React.createClass({
 		}
 		this.props.selectCoffee(info);
 	},
-	addToCart: function(){
-		console.log('adding to cart');
+	addToCart: function(id, price){
+		if(this.props.addMachine){
+			this.props.addMachine(id, price);
+		}
 	}
 })

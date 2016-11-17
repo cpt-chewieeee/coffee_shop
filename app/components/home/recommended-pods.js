@@ -6,7 +6,7 @@ module.exports = React.createClass({
 		if(this.state.selectedType === null) return null;
 		var all_pods = [];
 		for(var key in this.state.selectedPods.flavors){
-			all_pods.push(<Pod flavor={key} key={key} packs={this.state.selectedPods.flavors[key]} user={this.props.user}/>);
+			all_pods.push(<Pod flavor={key} key={key} packs={this.state.selectedPods.flavors[key]} user={this.props.user} addPod={this.props.addPod}/>);
 		}
 		return (
 			<Panel header={'Recommended Pods'}>
@@ -23,7 +23,6 @@ module.exports = React.createClass({
 		}
 	},
 	componentDidMount: function(){
-		// console.log('rp cdm');
 		this.setState({
 			selectedType: this.props.selectedType
 		})
@@ -31,7 +30,6 @@ module.exports = React.createClass({
 	componentWillReceiveProps: function(nextProps){
 		if(this.state.selectedType !== nextProps.selectedType){
 			var selectedPods = this.generatePods(nextProps.selectedType, nextProps.pods);
-			console.log(selectedPods);
 			this.setState({
 				selectedType: nextProps.selectedType,
 				selectedPods: selectedPods
