@@ -8,5 +8,8 @@
 1. cd ./coffee_shop/app && npm install
 2. npm run watch
 
+```
+	localhost:8080
+```
 
 * please see app/package.json and server/package.json for packages
