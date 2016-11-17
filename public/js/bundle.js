@@ -26480,12 +26480,6 @@
 		},
 		componentDidMount: function () {
 			Api.getAll(this.getAllCallBack);
-			if (Object.keys(this.props.params).length > 0) {
-				this.filterItem(this.props.params.itemId);
-			}
-		},
-		componentWillReceiveProps: function (nextProps, nextState) {
-			if (Object.keys(nextProps.params).length > 0) this.filterItem(nextProps.params.itemId);
 		},
 		getAllCallBack: function (data, error) {
 			if (error) {
@@ -45401,7 +45395,7 @@
 		displayName: 'exports',
 
 		render: function () {
-			console.log(this.props);
+
 			return React.createElement(
 				'div',
 				null,

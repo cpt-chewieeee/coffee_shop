@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node_modules/nodemon/bin/nodemon.js start",
-    "run:forever": "NODE_ENV=production forever start ./start",
-    "forever:stop": "forever stop ./start"
+    "forever": "NODE_ENV=production forever start start.js",
+    "forever:stop": "forever stop start.js"
   },
   "author": "hongyi zhang",
   "license": "ISC",
