@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var bodyParse = require('body-parser');
-
+var morgan = require('morgan');
 module.exports = function(){
 	var ApiRoute = express.Router();
 	var _ = require('underscore');
@@ -21,6 +21,7 @@ module.exports = function(){
 		},
 	
 		preSets: function(secret, getPath){
+			app.use(morgan('dev'));
 			app.use(bodyParse.urlencoded({extended: true}));
 			app.use(bodyParse.json());
 		},
