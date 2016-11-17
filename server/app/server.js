@@ -8,7 +8,6 @@ module.exports = function(){
 	var _ = require('underscore');
 	return {
 		start: function(port, staticPath){
-			console.log('___', __dirname + staticPath);
 			app.use(express.static(path.join(__dirname + staticPath)));
 			app.get('/', function(req, res){
 				console.log('--->', staticPath);
