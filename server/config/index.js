@@ -1,5 +1,5 @@
 module.exports = {
-	port: 8181,
+	port: 8080,
 	secret: 'hello_world',
 	public: '/../../public/',
 	public_files: function(){
